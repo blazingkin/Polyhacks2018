@@ -1,6 +1,6 @@
 
 db:
-  image: sqlite3
+  image: nouchka/sqlite3
   ports:
     - "5432"
  
