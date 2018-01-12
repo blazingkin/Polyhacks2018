@@ -1,12 +1,6 @@
-
-db:
-  image: nouchka/sqlite3
-  ports:
-    - "5432"
- 
-site:
+ site:
   build: .
-  command: bundle exec rails s -p 3000 -b '0.0.0.0'
+  command: sh startserver.sh
   volumes:
     - .:/myapp
   ports:
@@ -14,5 +8,3 @@ site:
   environment:
     - DB_USERNAME=root
     - DB_PASSWORD=
-  links:
-    - db
