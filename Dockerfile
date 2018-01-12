@@ -1,4 +1,4 @@
-FROM ruby:2.2.2
+FROM ruby:2.5.0-alpine3.7
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
   
 # Install Nokogiri
