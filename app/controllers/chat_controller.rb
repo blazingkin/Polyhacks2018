@@ -14,7 +14,7 @@ class ChatController < ApplicationController
         end
         @message.recipient_fk = recipient.id
         if @message.save
-
+            redirect_to '/chat/'+recipient.uid.to_s
         else
             flash[:danger] = @message.errors
             redirect_to '/'

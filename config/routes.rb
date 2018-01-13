@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
   get 'parent/:id', to: 'parent#show'
   get 'parent', to: 'parent#search'
+  get 'edit_profile', to: 'parent#edit'
+  post 'edit_profile', to: 'parent#update'
   get 'job/:id', to: 'job#show'
   post 'job/new', to: 'job#create'
   get 'job', to: 'job#search'
