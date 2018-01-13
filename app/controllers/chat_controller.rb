@@ -26,7 +26,18 @@ class ChatController < ApplicationController
     end
 
     def chat
-
+        if params['id'].nil?
+            flash[:danger] = 'Could not find chat recipient'
+            redirect_to '/'
+            return
+        end
+        @other_user = Parent.find_by(uid: params['id'])
+        if @other_user.nil?
+            flash[:danger] = 'Could not find chat recipient'
+            redirect_to '/'
+            return
+        end
+        @messages = current_user.messages_with(@other_user).sort {|a, b| a.created_at <=> b.created_at}
     end
 
     private

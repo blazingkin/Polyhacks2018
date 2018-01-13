@@ -1,0 +1,5 @@
+<% @messages.each do |message| %>
+    <%= local_time(message.created_at) %> - <%= message.message %>
+    <br />
+    <br />
+<% end %>

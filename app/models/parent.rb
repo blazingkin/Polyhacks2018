@@ -29,4 +29,10 @@ class Parent < ApplicationRecord
         end.uniq
     end
 
+    def messages_with(user)
+        ChatMessage.participant(self).select do |message|
+            message.parent.id == user.id || message.recipient_fk == user.id
+        end
+    end
+
 end
