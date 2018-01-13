@@ -1,4 +1,6 @@
 <%= form_for @parent, url: {action: 'update'}, method: :post do |f| %>
+    <%= f.hidden_field :latitude, id: 'latitude' %>
+    <%= f.hidden_field :longitude, id: 'longitude' %>
     <b><%= @parent.name%></b>
     <br />
     <br />
@@ -19,3 +21,13 @@
     <br />
     <%= f.submit 'Save', class: 'btn btn-primary form-control btn-lg' %>
 <% end %>
+
+<script>
+$(document).ready(function(){
+    navigator.geolocation.getCurrentPosition(fill_position);
+})
+function fill_position(position){
+    $('#latitude').val(position.coords.latitude);
+    $('#longitude').val(position.coords.longitude)
+}
+</script>

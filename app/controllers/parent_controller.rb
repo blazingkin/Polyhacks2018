@@ -34,6 +34,6 @@ class ParentController < ApplicationController
         end
 
         def profile_params
-            params['parent']&.permit(:email, :phone_number, :bio)
+            params['parent']&.permit(:email, :phone_number, :bio, :latitude, :longitude)
         end
 end

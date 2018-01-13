@@ -20,3 +20,9 @@ Bio -
     <br />
     <br />
 <% end %>
+
+<br />
+<br />
+<div class="message-user text-center">
+    <%= link_to 'Message '+@parent.name, '/chat/'+@parent.uid.to_s %>
+</div>
