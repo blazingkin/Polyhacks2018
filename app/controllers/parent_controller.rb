@@ -10,6 +10,7 @@ class ParentController < ApplicationController
 
     def edit
         @parent = current_user
+        p @parent
     end
 
     def update
@@ -31,5 +32,9 @@ class ParentController < ApplicationController
     private
         def searchable_params
             params.slice(:name)
+        end
+
+        def profile_params
+            params['parent']&.permit(:email, :phone_number, :bio)
         end
 end

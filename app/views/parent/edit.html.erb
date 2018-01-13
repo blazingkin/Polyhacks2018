@@ -1,3 +1,21 @@
-<% form_for @parent do |f| %>
-
+<%= form_for @parent, url: {action: 'update'}, method: :post do |f| %>
+    <b><%= @parent.name%></b>
+    <br />
+    <br />
+    <%= f.label :email %>
+    <br />
+    <%= f.text_field :email %>
+    <br />
+    <br />
+    <%= f.label :phone_number %>
+    <br />
+    <%= f.text_field :phone_number %>
+    <br />
+    <br />
+    <%= f.label :bio %>
+    <br />
+    <%= f.text_area :bio %>
+    <br />
+    <br />
+    <%= f.submit 'Save', class: 'btn btn-info btn-lg' %>
 <% end %>
