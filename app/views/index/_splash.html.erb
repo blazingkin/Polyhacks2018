@@ -1,5 +1,5 @@
 <div class="row text-scroll">
-    <div class="col-12" id="splash-text">
+    <div class="col-12 text-center" id="splash-text">
     </div>
 </div>
 <div class="row img-scroll">
@@ -20,5 +20,13 @@
 </div>
 
 <script>
-    
+    splash_index = 0;
+    splash_text = ["Find other parents in the area who can babysit your children when you are busy", "Babysit other children to earn credits you can spend", "Enter your available time and needed time so we can match you with compatible parents", "Start a conversation with people you have matched with"];
+    function slide_splash(){
+        $('#splash-text').html(splash_text[splash_index++]);
+        splash_index = splash_index % 4;
+        setTimeout(slide_splash, 2000);
+    }
+    slide_splash();
+
 </script>
