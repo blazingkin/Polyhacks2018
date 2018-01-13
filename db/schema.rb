@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180113055704) do
+ActiveRecord::Schema.define(version: 20180113065549) do
 
   create_table "children", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -22,13 +22,17 @@ ActiveRecord::Schema.define(version: 20180113055704) do
   end
 
   create_table "parents", force: :cascade do |t|
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "name"
     t.string   "email"
     t.string   "phone_number"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "uid",              limit: 8
+    t.string   "provider"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
 end
