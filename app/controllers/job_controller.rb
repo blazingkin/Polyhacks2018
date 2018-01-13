@@ -1,11 +1,15 @@
 class JobController < ApplicationController
 
     def show
-        @job = JobListing.find_by(params[:id])
+        @job = JobListing.find(params[:id])
         if @job.nil?
             flash[:danger] = 'Could not find that job listing'
             redirect_to '/'
         end
+    end
+
+    def new
+        @job = JobListing.new
     end
 
     def create
@@ -26,7 +30,7 @@ class JobController < ApplicationController
 
     private
         def job_params
-            params.permit(:info)
+            params['job_listing'].permit(:start_time, :end_time, :info)
         end
 
 end

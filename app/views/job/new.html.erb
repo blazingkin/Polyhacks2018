@@ -1,0 +1,22 @@
+<%= form_for @job, url: {action: 'create'}, method: :post do |f| %>
+    <%= f.label :start_time %>
+    <br />
+    <%= f.datetime_local_field :start_time, class: 'form-control' %>
+    <br />
+    <br />
+    <%= f.label :end_time %>
+    <br />
+    <%= f.datetime_local_field :end_time, class: 'form-control' %>
+    <br />
+    <br />
+    <%= f.label :info %>
+    <br />
+    <%= f.text_area :info, class: 'form-control', placeholder: 'Enter info about # of kids, age and specific needs' %>
+    <br />
+    <br />
+    <%= f.submit 'Submit', class: 'form-control btn btn-primary' %>
+<% end %>
+
+<script>
+    $('.date-time').timepicker();
+</script>
