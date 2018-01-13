@@ -10,15 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180113065549) do
+ActiveRecord::Schema.define(version: 20180113154857) do
+
+  create_table "chat_messages", force: :cascade do |t|
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "parent_id"
+    t.text     "message"
+    t.integer  "recipient_fk"
+    t.index ["parent_id"], name: "index_chat_messages_on_parent_id"
+  end
 
   create_table "children", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "parent_id"
     t.string   "name"
     t.integer  "age"
+    t.text     "bio"
+    t.integer  "job_listing_id"
+    t.index ["job_listing_id"], name: "index_children_on_job_listing_id"
     t.index ["parent_id"], name: "index_children_on_parent_id"
+  end
+
+  create_table "job_listings", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "parent_id"
+    t.text     "info"
+    t.index ["parent_id"], name: "index_job_listings_on_parent_id"
   end
 
   create_table "parents", force: :cascade do |t|
@@ -33,6 +53,7 @@ ActiveRecord::Schema.define(version: 20180113065549) do
     t.string   "provider"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+    t.text     "bio"
   end
 
 end
