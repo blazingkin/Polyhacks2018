@@ -1,0 +1,5 @@
+<% @parents.each do |parent| %>
+    <%= link_to parent.name, parent_url+'/'+parent.uid.to_s %>
+    <br />
+    <br />
+<% end %>
