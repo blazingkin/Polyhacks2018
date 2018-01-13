@@ -1,3 +1,8 @@
+<% if @parent.id == @current_user.id %>
+    <%= link_to 'Edit your profile', '/edit_profile'%>
+    <br />
+    <br />
+<% end %>
 Name - <%= @parent.name %>
 <br />
 Email - <%= @parent.email %>
