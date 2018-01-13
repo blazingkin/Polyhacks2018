@@ -1,19 +1,15 @@
-<div class="row text-center">
+<div class="row bg-white">
     <div class="col-12">
-        <div class="row text-center">
-            Job Listing
-        </div>
-        <div class="row text-center">
-            <%= listing.parent.name %> is looking for Childcare
-        </div>
-        <div class="row text-center">
-        They are looking for a job from <%= format_time(listing.start_time)%> until <%= format_time(listing.end_time)%>
-        </div>
-        <div class="row text-center">
-        Here's some info that they provided
-        </div>
-        <div class="row bg-info text-center">
-            <%= listing.info %>
-        </div>
+        Start Time: <%= format_time(listing.start_time) %>
+        <br />
+        End Time: <%= format_time(listing.end_time) %>
+        <br />
+        <br />
+        Number of children: <%= listing.child_number %>
+        <br />
+        <br />
+        Additional info:
+        <br />
+        <%= listing.info %>
     </div>
 </div>

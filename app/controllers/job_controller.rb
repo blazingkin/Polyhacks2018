@@ -30,7 +30,7 @@ class JobController < ApplicationController
 
     private
         def job_params
-            params['job_listing'].permit(:start_time, :end_time, :info)
+            params['job_listing'].permit(:start_time, :end_time, :info, :child_number)
         end
 
 end

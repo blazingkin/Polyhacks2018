@@ -14,6 +14,11 @@
     <%= f.text_area :info, class: 'form-control', placeholder: 'Enter info about # of kids, age and specific needs' %>
     <br />
     <br />
+    <%= f.label :number_of_children %>
+    <br />
+    <%= f.number_field :child_number, class: 'form-control'%>
+    <br />
+    <br />
     <%= f.submit 'Submit', class: 'form-control btn btn-primary' %>
 <% end %>
 

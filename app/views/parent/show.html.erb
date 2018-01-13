@@ -1,28 +1,86 @@
-<% if @parent.id == @current_user.id %>
-    <%= link_to 'Edit your profile', '/edit_profile'%>
-    <br />
-    <br />
-<% end %>
-Name - <%= @parent.name %>
-<br />
-Email - <%= @parent.email %>
-<br />
-Phone Number - <%= @parent.phone_number %>
-<br />
-Bio -
-<br />
-<div class="well well-lg">
-    <%= @parent.bio %>
-</div>
-<br />
-<% @parent.job_listings.each do |listing| %>
-    <%= render partial: 'shared/job_listing', locals: {listing: listing} %>
-    <br />
-    <br />
-<% end %>
-
-<br />
-<br />
-<div class="message-user text-center">
-    <%= link_to 'Message '+@parent.name, '/chat/'+@parent.uid.to_s %>
+<div class="bg-light">
+    <% if @parent.id == @current_user.id %>
+        <div class="row">
+            <div class="col-10"></div>
+            <div class="col-2">
+                <%= link_to 'Edit your profile', '/edit_profile'%>
+            </div>
+        </div>
+    <% end %>
+    <div class="row pic-and-verified">
+        <div class="col-4">
+        </div>
+        <div class="col-4 text-center">
+            Img goes here
+        </div>
+        <div class="col-4 text-center">
+            <em>Verified User</em>
+        </div>
+    </div>
+    <div class="row name">
+        <div class="col-12 text-center">
+            <h2 class="text-center"><%= @parent.name %></h2>
+        </div>
+    </div>
+    <div class="row rating">
+        <div class="col-12 text-center">
+            <strong class="text-center">★★★★★</strong>
+        </div>
+    </div>
+    <div class="row distance">
+        <div class="col-12 text-center">
+            0.5 Miles Away
+        </div>
+    </div>
+    <div class="row message">
+        <div class="col-12 text-center">
+            <%= link_to 'Message', '/chat/'+@parent.uid.to_s %>
+        </div>
+    </div>
+    <div class="row current-need bg-light">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="row">
+                <h3>Current Need</h3>
+            </div>
+            <% @parent.job_listings.each do |listing| %>
+                <%= render partial: 'shared/job_listing', locals: {listing: listing} %>
+                <br />
+                <br />
+            <% end %>
+        </div>
+    </div>
+    <div class="row mutual-friend bg-light">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="row">
+                <h3>Mutual Friends</h3>
+                <div class="col-md-12 bg-white">
+                    <div class="row">
+                        <div class="col-4 text-center">
+                            Img here
+                            <br />
+                            Sam
+                        </div>
+                        <div class="col-4 text-center">
+                            Img here
+                            <br />
+                            Sarah
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row child-info bg-light">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <div class="row">
+            <h3>Child Info</h3>
+                <div class="col-12 bg-white">
+                    <%= @parent.bio %>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
