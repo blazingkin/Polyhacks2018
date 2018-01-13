@@ -2,4 +2,16 @@
     <div class="col-4">
         Swap Sitter
     </div>
+    <div class="col-4">
+    </div>
+    <div class="col-4 pull-right">
+        <div id="user-widget">
+            <% if current_user %>
+                Welcome <strong><%= current_user.name %></strong>!
+                <%= link_to "Sign out", signout_path, id: "sign_out", class: 'btn btn-sm btn-danger' %>
+                <% else %>
+                <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+            <% end %>
+        </div>
+    </div>
 </div>

@@ -9,7 +9,9 @@
   </head>
 
   <body>
-    <%= render partial: 'layouts/header' %>
+    <% unless @current_user.nil? %>
+      <%= render partial: 'layouts/header' %>
+    <% end %>
     <div class="container-fluid">
       <% flash.each do |key, value| %>
         <% alert_class = case key

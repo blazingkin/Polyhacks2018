@@ -10,7 +10,6 @@ class ParentController < ApplicationController
 
     def edit
         @parent = current_user
-        p @parent
     end
 
     def update
