@@ -1,6 +1,7 @@
 class Parent < ApplicationRecord
     has_many :children
     has_many :chat_messages
+    has_many :job_listings
     validates :points, presence: true
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     #validates :email, length: { maximum: 255 },

@@ -1,5 +1,11 @@
 <% @messages.each do |message| %>
-    <%= local_time(message.created_at) %> - <%= message.message %>
+    <%= message.parent.name %> - <%= format_time(message.created_at) %> - <%= message.message %>
     <br />
     <br />
 <% end %>
+<%= form_tag chat_send_url, method: :post %>
+
+<%= hidden_field_tag :recipient, @other_user.uid %>
+<%= text_field_tag :message, '', class: 'form-control' %>
+
+<%= submit_tag 'Send', class: 'form-control btn btn-lg btn-primary' %>

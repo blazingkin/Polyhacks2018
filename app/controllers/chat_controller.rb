@@ -1,16 +1,18 @@
 class ChatController < ApplicationController
 
     def send_message
-        @message = ChatMessage.new(message_params)
+        @message = ChatMessage.new(message: params['message'])
         @message.parent = current_user
         if params['recipient'].nil?
             flash[:danger] = 'Message requires a recipient'
             redirect_to '/'
+            return
         end
-        recipient = Parent.find_by(uid: recipient)
+        recipient = Parent.find_by(uid: params['recipient'])
         if recipient.nil?
             flash[:danger] = 'Invalid recipient'
             redirect_to '/'
+            return
         end
         @message.recipient_fk = recipient.id
         if @message.save

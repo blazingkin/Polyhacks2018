@@ -14,3 +14,9 @@ Bio -
 <div class="well well-lg">
     <%= @parent.bio %>
 </div>
+<br />
+<% @parent.job_listings.each do |listing| %>
+    <%= render partial: 'shared/job_listing', locals: {listing: listing} %>
+    <br />
+    <br />
+<% end %>
