@@ -1,5 +1,8 @@
 class Parent < ApplicationRecord
     has_many :children
+    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    validates :email, presence: true, length: { maximum: 255 },
+                    format: { with: VALID_EMAIL_REGEX }
 
     def self.from_omniauth(auth)
         where(auth.permit(:provider, :uid)).first_or_initialize.tap do |user|

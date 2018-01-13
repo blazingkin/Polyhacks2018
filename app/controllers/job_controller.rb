@@ -9,8 +9,14 @@ class JobController < ApplicationController
     end
 
     def create
-        @job = JobListing.create(job_params)
+        @job = JobListing.new(job_params)
         @job.parent = current_user
+        if @job.save
+            redirect_to '/job/' + @job.id.to_s
+        else
+            flash[:danger] = @job.errors
+            redirect_to '/'
+        end
     end
 
     private

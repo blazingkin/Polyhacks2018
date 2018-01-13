@@ -1,5 +1,6 @@
 class JobListing < ApplicationRecord
     has_many :children
-    validates :text, presence: true
+    belongs_to :parent
+    validates :info, presence: true
     validates :parent, presence: true
 end
