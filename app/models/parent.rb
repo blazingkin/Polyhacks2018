@@ -18,4 +18,15 @@ class Parent < ApplicationRecord
         end
     end
 
+    # Makes way too many db calls, but whatevah
+    def chatting_with
+        ChatMessage.participant(self).map do |chat|
+            if chat.parent.id != self.id
+                chat.parent
+            else
+                Parent.find(chat.recipient_fk)
+            end
+        end.uniq
+    end
+
 end
