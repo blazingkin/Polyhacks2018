@@ -1,6 +1,6 @@
 <div class="row text-scroll">
-    <div class="col-12 text-center" id="splash-text">
-    </div>
+    <h1 class="col-12 text-center text-lg" id="splash-text">
+    </h1>
 </div>
 <div class="row img-scroll">
     <div class="col-12" id="splash-img">
@@ -15,7 +15,7 @@
     <div class="col-3">
     </div>
     <div class="col-6 text-center">
-        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+        <h2><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></h2>
     </div>
 </div>
 
@@ -25,7 +25,7 @@
     function slide_splash(){
         $('#splash-text').html(splash_text[splash_index++]);
         splash_index = splash_index % 4;
-        setTimeout(slide_splash, 2000);
+        setTimeout(slide_splash, 3000);
     }
     slide_splash();
 
