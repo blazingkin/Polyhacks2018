@@ -19,6 +19,11 @@ class JobController < ApplicationController
         end
     end
 
+    def search
+        @jobs = JobListing.all
+        @jobs = @jobs.page(params[:page])
+    end
+
     private
         def job_params
             params.permit(:info)

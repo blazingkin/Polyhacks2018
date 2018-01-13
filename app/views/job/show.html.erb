@@ -3,6 +3,9 @@ Job Listing
 <br />
 <%= @job.parent.name %> is looking for Childcare
 <br />
+They are looking for a job from <%= local_time(@job.start_time)%> until <%= local_time(@job.end_time)%>
+<br />
+<br />
 Here's some info that they provided
 <div class="well-lg">
     <%= @job.info %>

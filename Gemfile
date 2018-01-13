@@ -27,6 +27,13 @@ gem 'omniauth-facebook', '4.0.0'
 gem 'omniauth-twitter'
 gem 'omniauth-github'
 
+# Pagination
+gem 'will_paginate', '~> 3.1.0'
+
+# For time info
+gem 'local_time'
+gem 'bootstrap-timepicker-rails'
+
 # For styling - I mean, what app doesn't need bootstrap
 gem 'bootstrap'
 gem 'bootstrap-glyphicons'

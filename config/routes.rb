@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get 'parent', to: 'parent#search'
   get 'job/:id', to: 'job#show'
   post 'job/new', to: 'job#create'
+  get 'job', to: 'job#search'
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180113162523) do
+ActiveRecord::Schema.define(version: 20180113163227) do
 
   create_table "chat_messages", force: :cascade do |t|
     t.datetime "created_at",   null: false
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20180113162523) do
     t.datetime "updated_at", null: false
     t.integer  "parent_id"
     t.text     "info"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.index ["parent_id"], name: "index_job_listings_on_parent_id"
   end
 
