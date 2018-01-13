@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   get 'job/:id', to: 'job#show'
   post 'job/new', to: 'job#create'
   get 'job', to: 'job#search'
+  post 'chat/send', to: 'chat#send'
+  get 'chat', to: 'chat#list'
+  get 'chat/:id', to: 'chat#chat'
 end
