@@ -1,6 +1,6 @@
 class ChatController < ApplicationController
 
-    def send
+    def send_message
         @message = ChatMessage.new(message_params)
         @message.parent = current_user
         if params['recipient'].nil?
@@ -22,7 +22,8 @@ class ChatController < ApplicationController
     end
 
     def list
-
+        p 'loading list'
+        @chatting_with = current_user.chatting_with
     end
 
     def chat

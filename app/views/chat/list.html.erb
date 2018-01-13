@@ -1,0 +1,6 @@
+<% @chatting_with.each do |parent| %>
+    You have a chat with <%= parent.name %>
+    <%= link_to 'chat', 'chat/' + parent.uid.to_s %>
+    <br />
+    <br />
+<% end %>
