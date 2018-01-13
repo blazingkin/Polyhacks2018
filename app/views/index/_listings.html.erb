@@ -1,11 +1,4 @@
-<br />
-<div class="text-center">
-    <%= link_to 'Make a new post', new_job_path %>
-</div>
-<br />
-<br />
-Current listings
-<br />
+
 
 <% @jobs.each do |job| %>
     <%= job.parent.name %> is looking for Childcare
