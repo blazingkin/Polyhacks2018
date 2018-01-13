@@ -21,8 +21,11 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'omniauth'
+gem 'omniauth', '1.8.1'
+gem 'omniauth-oauth2', '1.5.0'
 gem 'omniauth-facebook', '4.0.0'
+gem 'omniauth-twitter'
+gem 'omniauth-github'
 
 # For styling - I mean, what app doesn't need bootstrap
 gem 'bootstrap'
