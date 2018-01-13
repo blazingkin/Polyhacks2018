@@ -22,7 +22,6 @@ class ChatController < ApplicationController
     end
 
     def list
-        p 'loading list'
         @chatting_with = current_user.chatting_with
     end
 
