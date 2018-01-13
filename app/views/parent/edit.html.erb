@@ -4,18 +4,18 @@
     <br />
     <%= f.label :email %>
     <br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, class: 'form-control' %>
     <br />
     <br />
     <%= f.label :phone_number %>
     <br />
-    <%= f.text_field :phone_number %>
+    <%= f.text_field :phone_number, class: 'form-control' %>
     <br />
     <br />
     <%= f.label :bio %>
     <br />
-    <%= f.text_area :bio %>
+    <%= f.text_area :bio, class: 'form-control' %>
     <br />
     <br />
-    <%= f.submit 'Save', class: 'btn btn-info btn-lg' %>
+    <%= f.submit 'Save', class: 'btn btn-primary form-control btn-lg' %>
 <% end %>
