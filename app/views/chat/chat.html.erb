@@ -20,6 +20,11 @@ font-size: 50px!important;}
 <%= form_tag chat_send_url, method: :post %>
 
 <%= hidden_field_tag :recipient, @other_user.uid %>
-<%= text_field_tag :message, '', class: 'form-control' %>
-
-<%= submit_tag 'Send', class: 'form-control btn btn-lg btn-primary' %>
+<div class="row">
+    <div class="col-8">
+        <%= text_field_tag :message, '', class: 'form-control', style: 'font-size: 60px;' %>
+    </div>
+    <div class="col-4">
+        <%= submit_tag 'Send', class: 'form-control btn btn-lg btn-primary', style: 'font-size: 60px;' %>
+    </div>
+</div>
