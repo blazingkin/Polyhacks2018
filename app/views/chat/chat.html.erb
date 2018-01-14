@@ -12,8 +12,9 @@ color: black;
 font-size: 50px!important;}
     </style>
 </head>
+<br />
 <% @messages.each do |message| %>
-    <p class="chattext" style="padding-left: 10px; padding-right: 10px;"><%= message.parent.name %> - <%= local_time(message.created_at) %> - <%= message.message %> </p>
+    <p class="chattext" style="padding-left: 15px; padding-right: 10px;"><%= message.parent.name %> - <%= local_time(message.created_at) %> - <%= message.message %> </p>
     <br />
     <br />
 <% end %>
