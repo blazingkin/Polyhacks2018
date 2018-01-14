@@ -1,9 +1,39 @@
+<head><!--font--> <style>
+  @import url("https://use.typekit.net/npn8sov.css");
+</style>
+
+    <style>
+        .listmsg{
+               font-family: "futura-pt",sans-serif; 
+font-style: normal;
+font-weight: 500 !important;
+    color: black;
+        font-size: 50px!important;
+        background-color: #C5E6FC;
+         padding: 3% 3% 3% 3%;  
+            width: 102%;
+            
+           
+            
+        }
+    
+    
+    </style>
+           
+           
+           
+</head>
+
+
+<br />
 <% @chatting_with.each do |parent| %>
     <div class="row">
         <div class="col-12">
-            <h2 class="text-center">
-                <%= link_to parent.name, 'chat/' + parent.uid.to_s, style: 'font-size: 50px;' %>
+            <a href="chat/<%= parent.uid %>">
+            <h2 class="text-center listmsg text-dark" style="font-size: 50px;" >
+                <%= parent.name %>
             </h2>
+            </a>
         </div>
     </div>
 <% end %>
