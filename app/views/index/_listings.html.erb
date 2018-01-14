@@ -37,7 +37,7 @@
                     <div class="row" style="background-color: #C5E6FC; padding-top: 5px; padding-bottom: 5px;">
                         <div class="col-4">
                             <br />
-                            <%= image_tag 'circle'+(i+1).to_s+'.png', height: '250px' %>
+                            <%= image_tag 'circle'+(job.parent.id).to_s+'.png', height: '250px' %>
                         </div>
                         <div class="col-8 text-dark" style="font-size: 50px;">
                             <strong class="text-black" style="font-size: 50px;"><%= job.parent.name.upcase %>, <%= job.child_number.to_s + " child".pluralize(job.child_number) %></strong>

@@ -1,8 +1,8 @@
-<div class="bg-light">
+<div class="bg-light" style="font-size: 50px;">
     <% if @parent.id == @current_user.id %>
         <div class="row">
-            <div class="col-10"></div>
-            <div class="col-2">
+            <div class="col-7"></div>
+            <div class="col-5">
                 <%= link_to 'Edit your profile', '/edit_profile'%>
             </div>
         </div>
@@ -11,7 +11,7 @@
         <div class="col-4">
         </div>
         <div class="col-4 text-center">
-            <%= image_tag 'circle1.png', height: '50px' %>
+            <%= image_tag 'circle1.png', height: '250px' %>
         </div>
         <div class="col-4 text-center">
             <em>Verified User</em>
@@ -19,12 +19,12 @@
     </div>
     <div class="row name">
         <div class="col-12 text-center">
-            <h2 class="text-center"><%= @parent.name %></h2>
+            <h2 class="text-center" style="font-size: 75px;"><%= @parent.name %></h2>
         </div>
     </div>
     <div class="row rating">
         <div class="col-12 text-center">
-            <strong class="text-center">★★★★★ - 500 points</strong>
+            <strong class="text-center" style="font-size: 40px;">★★★★★ - 500 points</strong>
         </div>
     </div>
     <div class="row distance">
@@ -37,6 +37,7 @@
             <%= link_to 'Message', '/chat/'+@parent.uid.to_s %> * <a href="#">Report</a>
         </div>
     </div>
+    <br />
     <div class="row current-need bg-light">
         <div class="col-2"></div>
         <div class="col-8">
