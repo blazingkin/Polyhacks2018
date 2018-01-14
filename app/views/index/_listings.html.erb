@@ -2,7 +2,7 @@
     <br />
     <div class="row bg-white">
         <div class="col-1"></div>
-        <div class="col-10" style="background-color: #267ABF; padding-bottom: 15px;">
+        <div class="col-10" style="background-color: #267ABF; padding-bottom: 15px; border-radius: 10px;">
             <%= form_tag '/', method: :get %>
             <strong class="text-white" style="font-size: 50px">SEARCH</strong>
             <div class="row">
@@ -34,7 +34,7 @@
             <h2 style="font-size: 50px;">POSTS</h2>
             <% @jobs.each_with_index do |job, i| %>
                 <a href="/parent/<%= job.parent.uid %>%">
-                    <div class="row" style="background-color: #C5E6FC; padding-top: 5px; padding-bottom: 5px;">
+                    <div class="row" style="background-color: #C5E6FC; padding-top: 5px; padding-bottom: 5px; border-radius: 10px;">
                         <div class="col-4">
                             <br />
                             <%= image_tag 'circle'+(job.parent.id).to_s+'.png', height: '250px' %>
