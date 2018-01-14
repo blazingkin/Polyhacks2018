@@ -3,15 +3,22 @@
     <div class="row bg-white">
         <div class="col-2"></div>
         <div class="col-8" style="background-color: #267ABF;">
+            <%= form_tag '/', method: :get %>
             <strong class="text-white">SEARCH</strong>
             <div class="row">
                 <div class="col-md-4">
-                    <%= text_field_tag :number_of_kids, '', placeholder: '# of kids' %>
+                    <label class="text-white"># of kids</label>
+                    <br />
+                    <%= text_field_tag :number_of_kids, '' %>
                 </div>
                 <div class="col-md-4">
-                    <%= text_field_tag :distance, '', placeholder: 'distance' %>
+                    <label class="text-white">Distance</label>
+                    <br />
+                    <%= text_field_tag :distance, ''%>
                 </div>
                 <div class="col-md-4">
+                    <label class="text-white">Date</label>
+                    <br />
                     <%= datetime_field_tag :date %>
                 </div>
             </div>

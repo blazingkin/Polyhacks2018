@@ -1,17 +1,25 @@
 <div class="row text-white" style="background-color: #267ABF;">
     <div class="col-3 text-center">
-        <%= link_to 'Swap Sitter', '/', class: 'text-white text-center' %>
+        <a href="/">
+            <%= image_tag 'housewhite.png', height: '50px' %>
+        </a>
     </div>
     <div class="col-3 text-center">
-        <%= link_to 'Messages', '/messages', class: 'text-white text-center' %>
+        <a href="/messages">
+            <%= image_tag 'chatwhite.png', height: '50px' %>
+        </a>
     </div>
     <div class="col-3 text-center">
-        <%= link_to 'New Post', '/new_job', class: 'text-white text-center'%>
+        <a href="/new_job">
+            <%= image_tag 'postwhite.png', height: '50px' %>
+        </a>
     </div>
     <div class="col-3 text-center">
         <div id="user-widget">
             <% if current_user %>
-                Welcome <%= link_to @current_user.name, '/parent/'+@current_user.uid.to_s, class: 'text-white' %>
+                <a href="/parent/<%= @current_user.uid %>">
+                    <%= image_tag 'profilewhite.png', height: '50px' %>
+                </a>
                 <%= link_to "Sign out", signout_path, id: "sign_out", class: 'btn btn-sm btn-danger' %>
                 <% else %>
                 <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class: 'text-white' %>
