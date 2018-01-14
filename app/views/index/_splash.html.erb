@@ -1,32 +1,122 @@
+<head>
+<!--font--> <style>
+  @import url("https://use.typekit.net/npn8sov.css");
+</style>
+
+<link rel="stylesheet" media="all" href="https://use.typekit.net/npn8sov.css" data-turbolinks-track="reload">
+<style>
+           
+body {
+    background: linear-gradient(#ffffff, #347bb5); /* Standard syntax (must be last) */
+    height: 200vh;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+      }
+h1   {color: blue;}
+.text-scroll{
+    font-family: "futura-pt",sans-serif; 
+font-style: normal;
+font-weight: 500 !important;
+    color: white;
+        font-size: 50px!important;
+         padding: 10% 5% 5% 10%;   
+        }
+#splash-text{
+            color: black;
+        }
+.img-scroll{
+          
+     text-align: center;
+        }
+        .logo p{
+            color: #267abf;
+            padding-top: 3 %;
+            font-family: "futura-pt", serif;
+            font-weight: 700;
+            font-size: 70px;
+            text-align: center;
+           letter-spacing: 1px;
+
+        }
+.logo img{
+            width: 55%;
+    display: block;
+    margin: 0 auto;
+    padding: 10% 0% 0% 0%;
+        }
+ .login{
+            padding: 20% 10% 10% 10%;
+            display: block;
+            }
+.login img{
+            width: 200%;
+            text-align: center;
+    
+    -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 3s; /* Firefox < 16 */
+        -ms-animation: fadein 3s; /* Internet Explorer */
+         -o-animation: fadein 3s; /* Opera < 12.1 */
+            animation: fadein 3s;
+        }
+    
+</style>
+    
+</head>
+<div class="row logo">
+    <div class="col-12">
+    <%= image_tag 'swapsitterlogosplash2.png'%>
+    </div>
+    <div class="col-12">
+     
+    </div>
+</div>
 <div class="row text-scroll">
-    <h1 class="col-12 text-center text-lg" id="splash-text">
-    </h1>
+    <p class="col-12 text-center text-lg" id="splash-text">
+    </p>
 </div>
 <div class="row img-scroll">
     <div class="col-12" id="splash-img">
+        <img src="http://via.placeholder.com/500x500">
     </div>
 </div>
-<div class="row logo">
-    <div class="col-12">
 
-    </div>
-</div>
 <div class="row login">
     <div class="col-3">
     </div>
-    <div class="col-6 text-center">
-        <h2><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></h2>
+    <div class="col-6">
+        <p><a href="/auth/facebook" id="sign_in"><%= image_tag 'fblogin.png' %></a></p>
     </div>
 </div>
 
-<script>
+<script >
     splash_index = 0;
-    splash_text = ["Find other parents in the area who can babysit your children when you are busy", "Babysit other children to earn credits you can spend", "Enter your available time and needed time so we can match you with compatible parents", "Start a conversation with people you have matched with"];
+    splash_text = ["Find other parents in the area who can babysit your children when you are busy ", "Babysit other children to earn credits you can spend", "Enter your available time and needed time so we can match you with other parents", "Start a conversation with people you have matched with"];
     function slide_splash(){
         $('#splash-text').html(splash_text[splash_index++]);
         splash_index = splash_index % 4;
-        setTimeout(slide_splash, 3000);
+        setTimeout(slide_splash, 5000);
     }
     slide_splash();
 
 </script>
+   
