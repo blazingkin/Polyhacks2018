@@ -1,25 +1,25 @@
 <%= form_for @parent, url: {action: 'update'}, method: :post do |f| %>
     <%= f.hidden_field :latitude, id: 'latitude' %>
     <%= f.hidden_field :longitude, id: 'longitude' %>
-    <b><%= @parent.name%></b>
+    <b style="font-size: 50px;"><%= @parent.name%></b>
     <br />
     <br />
-    <%= f.label :email %>
+    <%= f.label :email, style: 'font-size: 50px;' %>
     <br />
-    <%= f.email_field :email, class: 'form-control' %>
-    <br />
-    <br />
-    <%= f.label :phone_number %>
-    <br />
-    <%= f.telephone_field :phone_number, class: 'form-control' %>
+    <%= f.email_field :email, class: 'form-control', style: 'font-size: 50px;' %>
     <br />
     <br />
-    <%= f.label :bio %>
+    <%= f.label :phone_number, style: 'font-size: 50px;' %>
     <br />
-    <%= f.text_area :bio, class: 'form-control' %>
+    <%= f.telephone_field :phone_number, class: 'form-control', style: 'font-size: 50px' %>
     <br />
     <br />
-    <%= f.submit 'Save', class: 'btn btn-primary form-control btn-lg' %>
+    <%= f.label :bio, style: 'font-size: 50px;' %>
+    <br />
+    <%= f.text_area :bio, class: 'form-control', style: 'font-size: 50px;' %>
+    <br />
+    <br />
+    <%= f.submit 'Save', class: 'btn btn-primary form-control btn-lg', style: 'font-size: 50px;' %>
 <% end %>
 
 <script>
