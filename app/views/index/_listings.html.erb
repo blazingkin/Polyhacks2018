@@ -2,7 +2,7 @@
     <br />
     <div class="row bg-white">
         <div class="col-2"></div>
-        <div class="col-8" style="background-color: #267ABF;">
+        <div class="col-8" style="background-color: #267ABF; padding-bottom: 5px;">
             <%= form_tag '/', method: :get %>
             <strong class="text-white">SEARCH</strong>
             <div class="row">
@@ -22,6 +22,7 @@
                     <%= datetime_field_tag :date %>
                 </div>
             </div>
+            <br />
             <%= submit_tag 'Search', class: 'btn form-control' %>
         </div>
     </div>
@@ -33,7 +34,7 @@
             <h2>POSTS</h2>
             <% @jobs.each do |job| %>
                 <a href="/parent/<%= job.parent.uid %>%">
-                    <div class="row" style="background-color: #C5E6FC;">
+                    <div class="row" style="background-color: #C5E6FC; padding-top: 5px; padding-bottom: 5px;">
                         <div class="col-4">
                         </div>
                         <div class="col-8 text-dark">
