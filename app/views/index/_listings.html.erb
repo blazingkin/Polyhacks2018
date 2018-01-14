@@ -25,24 +25,21 @@
         <div class="col-8">
             <h2>POSTS</h2>
             <% @jobs.each do |job| %>
-                <div class="row" style="background-color: #C5E6FC;">
-                    <div class="col-4">
+                <a href="/parent/<%= job.parent.uid %>%">
+                    <div class="row" style="background-color: #C5E6FC;">
+                        <div class="col-4">
+                        </div>
+                        <div class="col-8 text-dark">
+                            <strong class="text-black"><%= job.parent.name.upcase %>, <%= job.child_number.to_s + " child".pluralize(job.child_number) %></strong>
+                            <br />
+                            From <%= format_time(job.start_time) %>
+                            <br />
+                            To <%= format_time(job.end_time) %>
+                        </div>
                     </div>
-                    <div class="col-8">
-                        <strong><%= job.parent.name.upcase %>, <%= job.child_number.to_s + " child".pluralize(job.child_number) %></strong>
-                    </div>
-                </div>
+                </a>
                 <Br />
             <% end %>
         </div>
     </div>
 </div>
-<% @jobs.each do |job| %>
-    <%= job.parent.name %> is looking for Childcare
-    <br />
-    <%= link_to 'here', '/job/'+job.id.to_s %>
-    <br />
-    <br />
-<% end %>
-
-<%= will_paginate @jobs %>
