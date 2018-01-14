@@ -4,36 +4,34 @@
 <div class="row">
     <div class="col-1">
     </div>
-    <div class="col-10 bg-light" style="padding-top: 5px; padding-bottom: 10px;">
+    <div class="col-10 bg-light" style="font-size: 50px; padding-top: 5px; padding-bottom: 10px;">
         <strong>NEW POST</strong>
         <br />
         <%= f.label :start_time %>
         <br />
-        <%= f.datetime_local_field :start_time, class: 'form-control' %>
-        <br />
+        <%= f.datetime_local_field :start_time, class: 'form-control', style: 'font-size: 50px !important;' %>
         <br />
         <%= f.label :end_time %>
         <br />
-        <%= f.datetime_local_field :end_time, class: 'form-control' %>
+        <%= f.datetime_local_field :end_time, class: 'form-control', style: 'font-size: 50px !important;' %>
     </div>
 </div>
 <br />
 <br />
 <br />
-<div class="row">
-    <div class="col-2"></div>
-    <div class="col-8">
-        <%= f.text_area :info, class: 'form-control', placeholder: "Additional Info\n(ages, allergies, special needs, etc.)", rows: '10', style: 'background-color: #C5E6FC;' %>
-        <br />
+<div class="row" style="font-size: 50px;">
+    <div class="col-1"></div>
+    <div class="col-10">
+        <%= f.text_area :info, class: 'form-control', placeholder: "Additional Info\n(ages, allergies, special needs, etc.)", rows: '8', style: 'font-size: 50px; background-color: #C5E6FC;' %>
         <br />
         <%= f.label :number_of_children %>
         <br />
-        <%= f.number_field :child_number, class: 'form-control bg-light'%>
+        <%= f.number_field :child_number, class: 'form-control bg-light', style: 'font-size: 50px;'%>
     </div>
 </div>
 <br />
 <br />
-<%= f.submit 'Submit', class: 'form-control btn text-white', style: 'background-color: #267ABF;' %>
+<%= f.submit 'Submit', class: 'form-control btn text-white', style: 'background-color: #267ABF; font-size: 50px;' %>
 <% end %>
 
 <script>
