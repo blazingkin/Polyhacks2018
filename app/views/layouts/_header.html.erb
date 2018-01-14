@@ -1,11 +1,14 @@
-<div class="row bg-primary text-white">
-    <div class="col-4 text-center">
-        <%= link_to 'Swap Sitter', '/', class: 'text-white' %>
+<div class="row text-white" style="background-color: #267ABF;">
+    <div class="col-3 text-center">
+        <%= link_to 'Swap Sitter', '/', class: 'text-white text-center' %>
     </div>
-    <div class="col-4">
-        <%= link_to 'Messages', '/messages', class: 'text-white' %>
+    <div class="col-3 text-center">
+        <%= link_to 'Messages', '/messages', class: 'text-white text-center' %>
     </div>
-    <div class="col-4 pull-right">
+    <div class="col-3 text-center">
+        <%= link_to 'New Post', '/new_job', class: 'text-white text-center'%>
+    </div>
+    <div class="col-3 text-center">
         <div id="user-widget">
             <% if current_user %>
                 Welcome <%= link_to @current_user.name, '/parent/'+@current_user.uid.to_s, class: 'text-white' %>
