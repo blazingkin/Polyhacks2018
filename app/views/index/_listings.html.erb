@@ -1,44 +1,46 @@
 <div class="bg-white">
     <br />
     <div class="row bg-white">
-        <div class="col-2"></div>
-        <div class="col-8" style="background-color: #267ABF; padding-bottom: 5px;">
+        <div class="col-1"></div>
+        <div class="col-10" style="background-color: #267ABF; padding-bottom: 15px;">
             <%= form_tag '/', method: :get %>
-            <strong class="text-white">SEARCH</strong>
+            <strong class="text-white" style="font-size: 50px">SEARCH</strong>
             <div class="row">
                 <div class="col-md-4">
-                    <label class="text-white"># of kids</label>
+                    <label class="text-white" style="font-size: 50px;"># of kids</label>
                     <br />
                     <%= text_field_tag :number_of_kids, '' %>
                 </div>
                 <div class="col-md-4">
-                    <label class="text-white">Distance</label>
+                    <label class="text-white" style="font-size: 50px;">Distance</label>
                     <br />
                     <%= text_field_tag :distance, ''%>
                 </div>
                 <div class="col-md-4">
-                    <label class="text-white">Date</label>
+                    <label class="text-white" style="font-size: 50px;">Date</label>
                     <br />
                     <%= datetime_field_tag :date %>
                 </div>
             </div>
             <br />
-            <%= submit_tag 'Search', class: 'btn form-control' %>
+            <%= submit_tag 'Search', class: 'btn form-control', style: "font-size: 50px;" %>
         </div>
     </div>
     <br />
     <br />
     <div class="row bg-white">
-        <div class="col-2"></div>
-        <div class="col-8">
-            <h2>POSTS</h2>
-            <% @jobs.each do |job| %>
+        <div class="col-1"></div>
+        <div class="col-10">
+            <h2 style="font-size: 50px;">POSTS</h2>
+            <% @jobs.each_with_index do |job, i| %>
                 <a href="/parent/<%= job.parent.uid %>%">
                     <div class="row" style="background-color: #C5E6FC; padding-top: 5px; padding-bottom: 5px;">
                         <div class="col-4">
+                            <br />
+                            <%= image_tag 'circle'+(i+1).to_s+'.png', height: '250px' %>
                         </div>
-                        <div class="col-8 text-dark">
-                            <strong class="text-black"><%= job.parent.name.upcase %>, <%= job.child_number.to_s + " child".pluralize(job.child_number) %></strong>
+                        <div class="col-8 text-dark" style="font-size: 50px;">
+                            <strong class="text-black" style="font-size: 50px;"><%= job.parent.name.upcase %>, <%= job.child_number.to_s + " child".pluralize(job.child_number) %></strong>
                             <br />
                             From <%= format_time(job.start_time) %>
                             <br />
