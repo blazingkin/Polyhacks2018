@@ -29,7 +29,7 @@
                     <div class="col-4">
                     </div>
                     <div class="col-8">
-                        <strong><%= job.parent.name.upcase %>, <%= "child".pluralize(job.child_number) %></strong>
+                        <strong><%= job.parent.name.upcase %>, <%= job.child_number.to_s + " child".pluralize(job.child_number) %></strong>
                     </div>
                 </div>
                 <Br />
