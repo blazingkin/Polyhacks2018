@@ -93,7 +93,9 @@ body {
         </div>
     </div>
     <br />
-    <%= link_to "Sign out", signout_path, id: "sign_out", class: 'form-control btn btn-lg btn-danger text-center', style: 'font-size: 50px;' %>   
+    <% if @parent.id == @current_user.id %>
+        <%= link_to "Sign out", signout_path, id: "sign_out", class: 'form-control btn btn-lg btn-danger text-center', style: 'font-size: 50px;' %>   
+    <% end %>
     <br />
     <br />
 </div>
