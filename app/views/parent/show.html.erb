@@ -1,3 +1,4 @@
+<br />
 <div class="bg-light" style="font-size: 50px;">
     <% if @parent.id == @current_user.id %>
         <div class="row">
@@ -42,7 +43,7 @@
         <div class="col-2"></div>
         <div class="col-8">
             <div class="row">
-                <h3>Current Need</h3>
+                <h3 style="font-size: 50px;">Current Need</h3>
             </div>
             <% @parent.job_listings.each do |listing| %>
                 <%= render partial: 'shared/job_listing', locals: {listing: listing} %>
@@ -51,20 +52,20 @@
             <% end %>
         </div>
     </div>
-    <div class="row mutual-friend bg-light">
+    <div class="row mutual-friend bg-light" >
         <div class="col-2"></div>
         <div class="col-8">
             <div class="row">
-                <h3>Mutual Friends</h3>
+                <h3 style="font-size: 50px;">Mutual Friends</h3>
                 <div class="col-md-12 bg-white">
                     <div class="row">
-                        <div class="col-4 text-center">
-                            <%= image_tag 'circle2.png', height: '50px'%>
+                        <div class="col-6 text-center" style="font-size: 50px;">
+                            <%= image_tag 'circle2.png', height: '200px'%>
                             <br />
                             Sam
                         </div>
-                        <div class="col-4 text-center">
-                            <%= image_tag 'circle3.png', height: '50px' %>
+                        <div class="col-6 text-center" style="font-size: 50px;">
+                            <%= image_tag 'circle3.png', height: '200px' %>
                             <br />
                             Sarah
                         </div>
@@ -73,15 +74,20 @@
             </div>
         </div>
     </div>
+    <br />
     <div class="row child-info bg-light">
         <div class="col-2"></div>
         <div class="col-8">
             <div class="row">
-            <h3>Child Info</h3>
-                <div class="col-12 bg-white">
+            <h3 style="font-size: 50px;">Child Info</h3>
+                <div class="col-12 bg-white" style="font-size: 50px;">
                     <%= @parent.bio %>
                 </div>
             </div>
         </div>
     </div>
+    <br />
+    <%= link_to "Sign out", signout_path, id: "sign_out", class: 'form-control btn btn-lg btn-danger text-center', style: 'font-size: 50px;' %>   
+    <br />
+    <br />
 </div>
