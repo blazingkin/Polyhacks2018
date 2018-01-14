@@ -96,7 +96,7 @@ font-weight: 500 !important;
 </div>
 <div class="row img-scroll">
     <div class="col-12" id="splash-img">
-        <img src="http://via.placeholder.com/500x500">
+        <img src="http://via.placeholder.com/500x500" style="height: 500px;" id="img-to-change">
     </div>
 </div>
 
@@ -110,10 +110,12 @@ font-weight: 500 !important;
 
 <script >
     splash_index = 0;
-    splash_text = ["Find other parents in the area who can babysit your children when you are busy ", "Babysit other children to earn credits you can spend", "Enter your available time and needed time so we can match you with other parents", "Start a conversation with people you have matched with"];
+    splash_text = ["Babysit other children to earn credits you can spend", "Enter your needed time so we can match you with other parents", "Start a conversation with people you have matched with"];
+    splash_imgs = ['assets/babysit-other-children.png', 'assets/enter-available-time.png', 'assets/housewhite.png']
     function slide_splash(){
+        $('#img-to-change').attr('src', splash_imgs[splash_index]);
         $('#splash-text').html(splash_text[splash_index++]);
-        splash_index = splash_index % 4;
+        splash_index = splash_index % 3;
         setTimeout(slide_splash, 5000);
     }
     slide_splash();
